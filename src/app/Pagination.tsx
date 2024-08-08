@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const MAX_PAGE_LENGTH = 100;
+const MAX_PAGE_LENGTH = 10;
 
 export default function Pagination({
   initialPage,
@@ -84,7 +84,7 @@ export default function Pagination({
         })}
 
       {/* Middle right delimiter */}
-      {initialPage != pages.length - 1 && (
+      {initialPage != pages.length && (
         <div key={"middle-end-delimiter"}>...</div>
       )}
 

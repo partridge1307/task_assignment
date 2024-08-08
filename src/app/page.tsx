@@ -31,18 +31,22 @@ export default async function Home({
     const aFullname = `${a.name.title} ${a.name.first} ${a.name.last}`;
     const bFullname = `${b.name.title} ${b.name.first} ${b.name.last}`;
 
-    if (aFullname > bFullname) {
-      return 1;
-    }
-    if (aFullname < bFullname) {
-      return -1;
-    }
+    // username prioritize
     if (a.login.username > b.login.username) {
       return 1;
     }
     if (a.login.username < b.login.username) {
       return -1;
     }
+
+    // fullname prioritize
+    if (aFullname > bFullname) {
+      return 1;
+    }
+    if (aFullname < bFullname) {
+      return -1;
+    }
+
     return 0;
   });
 
